@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="process.env.NODE_ENV最近在看Vue源码解析，看到下面的代码 123456if (el === document.body || el === document.documentElement) &amp;#123;    process.env.NODE_ENV !== &apos;production&apos; &amp;amp;&amp;amp; warn(      `Do not mount Vue to &amp;l">
+<meta name="description" content="process.env.NODE_ENV最近在看Vue源码解析，看到下面的代码">
 <meta name="keywords" content="前端,node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="process.env.NODE_ENV">
 <meta property="og:url" content="http://gajya.github.io/2018/12/18/process.env.NODE_ENV/index.html">
 <meta property="og:site_name" content="GAJYA的个人博客">
-<meta property="og:description" content="process.env.NODE_ENV最近在看Vue源码解析，看到下面的代码 123456if (el === document.body || el === document.documentElement) &amp;#123;    process.env.NODE_ENV !== &apos;production&apos; &amp;amp;&amp;amp; warn(      `Do not mount Vue to &amp;l">
+<meta property="og:description" content="process.env.NODE_ENV最近在看Vue源码解析，看到下面的代码">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-04T15:19:24.066Z">
+<meta property="og:updated_time" content="2019-03-04T17:29:01.148Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="process.env.NODE_ENV">
-<meta name="twitter:description" content="process.env.NODE_ENV最近在看Vue源码解析，看到下面的代码 123456if (el === document.body || el === document.documentElement) &amp;#123;    process.env.NODE_ENV !== &apos;production&apos; &amp;amp;&amp;amp; warn(      `Do not mount Vue to &amp;l">
+<meta name="twitter:description" content="process.env.NODE_ENV最近在看Vue源码解析，看到下面的代码">
 
 
 
@@ -377,6 +377,7 @@
 
       
         <h2 id="process-env-NODE-ENV"><a href="#process-env-NODE-ENV" class="headerlink" title="process.env.NODE_ENV"></a>process.env.NODE_ENV</h2><p>最近在看Vue源码解析，看到下面的代码</p>
+<a id="more"></a>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (el === <span class="built_in">document</span>.body || el === <span class="built_in">document</span>.documentElement) &#123;</span><br><span class="line">    process.env.NODE_ENV !== <span class="string">'production'</span> &amp;&amp; warn(</span><br><span class="line">      <span class="string">`Do not mount Vue to &lt;html&gt; or &lt;body&gt; - mount to normal elements instead.`</span></span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="process"><a href="#process" class="headerlink" title="process"></a>process</h3><p>Node中的<a href="http://nodejs.cn/api/process.html#process_process_env" target="_blank" rel="noopener">process.env</a>官方文档</p>
 <p>返回用户的环境信息。</p>

@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="GAJYA的个人博客">
 <meta property="og:description" content="class类constructor方法constructor方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法。一个类必须有constructor方法，如果没有显式定义，一个空的constructor方法会被默认添加。 如果定义了一个空的类Point，Javascript引擎会自动为它添加一个空的contructor方法。 contructor方法默认返回实例对象（即this），完全">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-04T15:26:00.484Z">
+<meta property="og:updated_time" content="2019-03-04T17:28:43.259Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="class类">
 <meta name="twitter:description" content="class类constructor方法constructor方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法。一个类必须有constructor方法，如果没有显式定义，一个空的constructor方法会被默认添加。 如果定义了一个空的类Point，Javascript引擎会自动为它添加一个空的contructor方法。 contructor方法默认返回实例对象（即this），完全">
@@ -390,6 +390,7 @@
         <h2 id="class类"><a href="#class类" class="headerlink" title="class类"></a>class类</h2><h3 id="constructor方法"><a href="#constructor方法" class="headerlink" title="constructor方法"></a>constructor方法</h3><p><code>constructor</code>方法是类的默认方法，通过<code>new</code>命令生成对象实例时，自动调用该方法。一个类必须有<code>constructor</code>方法，如果没有显式定义，一个空的<code>constructor</code>方法会被默认添加。</p>
 <p>如果定义了一个空的类Point，Javascript引擎会自动为它添加一个空的<code>contructor</code>方法。</p>
 <p><code>contructor</code>方法默认返回实例对象（即<code>this</code>），完全可以指定返回另外一个对象。</p>
+<a id="more"></a>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span> () &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.create(<span class="literal">null</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Foo() <span class="keyword">instanceof</span> Foo <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 <p>上面代码中，<code>constructor</code>函数返回一个全新的对象，结果导致实例对象不是<code>Foo</code>类的实例。</p>
 <p>类必须用<code>new</code>调用，否则会报错。这是它跟普通构造函数的一个主要区别，后者不用<code>new</code>也可以执行。</p>

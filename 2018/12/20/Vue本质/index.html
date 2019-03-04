@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="GAJYA的个人博客">
 <meta property="og:description" content="从入口开始Vue初始化Vue实际上就是一个用 Function 实现的类，我们只能通过 new Vue 去实例化它。 有些同学看到这不禁想问，为何 Vue 不用 ES6 的 Class 去实现呢？我们往后看这里有很多 xxxMixin 的函数调用，并把 Vue 当参数传入，它们的功能都是给 Vue 的 prototype 上扩展一些方法，Vue 按功能把这些扩展分散到多个模块中去实现，而不是在一个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-04T16:15:35.508Z">
+<meta property="og:updated_time" content="2019-03-04T17:29:32.207Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue本质">
 <meta name="twitter:description" content="从入口开始Vue初始化Vue实际上就是一个用 Function 实现的类，我们只能通过 new Vue 去实例化它。 有些同学看到这不禁想问，为何 Vue 不用 ES6 的 Class 去实现呢？我们往后看这里有很多 xxxMixin 的函数调用，并把 Vue 当参数传入，它们的功能都是给 Vue 的 prototype 上扩展一些方法，Vue 按功能把这些扩展分散到多个模块中去实现，而不是在一个">
@@ -378,6 +378,7 @@
       
         <h2 id="从入口开始"><a href="#从入口开始" class="headerlink" title="从入口开始"></a>从入口开始</h2><h3 id="Vue初始化"><a href="#Vue初始化" class="headerlink" title="Vue初始化"></a>Vue初始化</h3><p>Vue实际上就是一个用 Function 实现的类，我们只能通过 <code>new Vue</code> 去实例化它。</p>
 <p>有些同学看到这不禁想问，为何 Vue 不用 ES6 的 Class 去实现呢？我们往后看这里有很多 <code>xxxMixin</code> 的函数调用，并把 <code>Vue</code> 当参数传入，它们的功能都是给 Vue 的 prototype 上扩展一些方法，Vue 按功能把这些扩展分散到多个模块中去实现，而不是在一个模块里实现所有，这种方式是用 Class 难以实现的。这么做的好处是非常方便代码的维护和管理，这种编程技巧也非常值得我们去学习。</p>
+<a id="more"></a>
 <h3 id="initGlobalAPI"><a href="#initGlobalAPI" class="headerlink" title="initGlobalAPI"></a>initGlobalAPI</h3><p>Vue.js 在整个初始化过程中，除了给它的原型 prototype 上扩展方法，还会给 <code>Vue</code> 这个对象本身扩展全局的静态方法，它的定义在 <code>src/core/global-api/index.js</code> 中。</p>
 <p>Vue 官网中关于全局 API 都可以在这个文件里找到。有一点要注意的是，<code>Vue.util</code> 暴露的方法最好不要依赖，因为它可能经常会发生变化，是不稳定的。</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这一节的目的是让同学们对 Vue 是什么有一个直观的认识，它本质上就是一个用 Function 实现的 Class，然后它的原型 prototype 以及它本身都扩展了一系列的方法和属性</p>

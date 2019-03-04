@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Set利用SetES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。 Set 本身是一个构造函数，用来生成 Set 数据结构。 12345678const s = new Set();[2, 3, 5, 4, 5, 2, 2].forEach(x =&amp;gt; s.add(x));for (let i of s) &amp;#123;  console.log(i);&amp;#">
+<meta name="description" content="Set利用SetES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。 Set 本身是一个构造函数，用来生成 Set 数据结构。">
 <meta name="keywords" content="javascript,前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Set">
 <meta property="og:url" content="http://gajya.github.io/2018/12/26/Set/index.html">
 <meta property="og:site_name" content="GAJYA的个人博客">
-<meta property="og:description" content="Set利用SetES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。 Set 本身是一个构造函数，用来生成 Set 数据结构。 12345678const s = new Set();[2, 3, 5, 4, 5, 2, 2].forEach(x =&amp;gt; s.add(x));for (let i of s) &amp;#123;  console.log(i);&amp;#">
+<meta property="og:description" content="Set利用SetES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。 Set 本身是一个构造函数，用来生成 Set 数据结构。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-04T15:16:09.607Z">
+<meta property="og:updated_time" content="2019-03-04T17:29:09.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Set">
-<meta name="twitter:description" content="Set利用SetES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。 Set 本身是一个构造函数，用来生成 Set 数据结构。 12345678const s = new Set();[2, 3, 5, 4, 5, 2, 2].forEach(x =&amp;gt; s.add(x));for (let i of s) &amp;#123;  console.log(i);&amp;#">
+<meta name="twitter:description" content="Set利用SetES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。 Set 本身是一个构造函数，用来生成 Set 数据结构。">
 
 
 
@@ -378,6 +378,7 @@
       
         <h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><h3 id="利用Set"><a href="#利用Set" class="headerlink" title="利用Set"></a>利用Set</h3><p>ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
 <p>Set 本身是一个构造函数，用来生成 Set 数据结构。</p>
+<a id="more"></a>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line"></span><br><span class="line">[<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">2</span>].forEach(<span class="function"><span class="params">x</span> =&gt;</span> s.add(x));</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> s) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2 3 5 4</span></span><br></pre></td></tr></table></figure>
 <p>可以通过<code>add</code>方法向Set结构加入成员，结果表明Set结构不会添加重复的值。</p>
 <p>Set 函数可以接受一个数组（或者具有 iterable 接口的其他数据结构）作为参数，用来初始化。</p>

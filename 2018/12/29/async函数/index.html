@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="async函数它就是Generator函数的语法糖。 Generator 函数，依次读取两个文件。 1234567891011121314151617const fs = require(&apos;fs&apos;);const readFile = function (fileName) &amp;#123;  return new Promise(function (resolve, reject) &amp;#123;">
+<meta name="description" content="async函数它就是Generator函数的语法糖。 Generator 函数，依次读取两个文件。">
 <meta name="keywords" content="javascript,前端,es6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="async函数">
 <meta property="og:url" content="http://gajya.github.io/2018/12/29/async函数/index.html">
 <meta property="og:site_name" content="GAJYA的个人博客">
-<meta property="og:description" content="async函数它就是Generator函数的语法糖。 Generator 函数，依次读取两个文件。 1234567891011121314151617const fs = require(&apos;fs&apos;);const readFile = function (fileName) &amp;#123;  return new Promise(function (resolve, reject) &amp;#123;">
+<meta property="og:description" content="async函数它就是Generator函数的语法糖。 Generator 函数，依次读取两个文件。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-04T15:26:43.118Z">
+<meta property="og:updated_time" content="2019-03-04T17:28:30.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="async函数">
-<meta name="twitter:description" content="async函数它就是Generator函数的语法糖。 Generator 函数，依次读取两个文件。 1234567891011121314151617const fs = require(&apos;fs&apos;);const readFile = function (fileName) &amp;#123;  return new Promise(function (resolve, reject) &amp;#123;">
+<meta name="twitter:description" content="async函数它就是Generator函数的语法糖。 Generator 函数，依次读取两个文件。">
 
 
 
@@ -389,6 +389,7 @@
       
         <h2 id="async函数"><a href="#async函数" class="headerlink" title="async函数"></a>async函数</h2><p>它就是Generator函数的语法糖。</p>
 <p>Generator 函数，依次读取两个文件。</p>
+<a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> readFile = <span class="function"><span class="keyword">function</span> (<span class="params">fileName</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    fs.readFile(fileName, <span class="function"><span class="keyword">function</span>(<span class="params">error, data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (error) <span class="keyword">return</span> reject(error);</span><br><span class="line">      resolve(data);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> gen = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> f1 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/fstab'</span>);</span><br><span class="line">  <span class="keyword">const</span> f2 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/shells'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(f1.toString());</span><br><span class="line">  <span class="built_in">console</span>.log(f2.toString());</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>上面代码的函数<code>gen</code>可以写成<code>async</code>函数，就是下面这样。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> asyncReadFile = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> f1 = <span class="keyword">await</span> readFile(<span class="string">'/etc/fstab'</span>);</span><br><span class="line">  <span class="keyword">const</span> f2 = <span class="keyword">await</span> readFile(<span class="string">'/etc/shells'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(f1.toString());</span><br><span class="line">  <span class="built_in">console</span>.log(f2.toString());</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
