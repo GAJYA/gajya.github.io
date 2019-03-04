@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="javascript,前端,h5,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="GAJYA的个人博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="简单的文件上传1234&amp;lt;form id=&quot;uploadForm&quot; method=&quot;POST&quot; action=&quot;upload&quot; enctype=&quot;multipart/form-data&quot;&amp;gt;      &amp;lt;input type=&quot;file&quot; id=&quot;myFile&quot; name=&quot;file&quot;&amp;gt;&amp;lt;/input&amp;gt;      &amp;lt;input type=&quot;submit&quot; va">
+<meta name="keywords" content="javascript,前端,h5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件上传">
+<meta property="og:url" content="http://gajya.github.io/2017/09/26/文件上传/index.html">
+<meta property="og:site_name" content="GAJYA的个人博客">
+<meta property="og:description" content="简单的文件上传1234&amp;lt;form id=&quot;uploadForm&quot; method=&quot;POST&quot; action=&quot;upload&quot; enctype=&quot;multipart/form-data&quot;&amp;gt;      &amp;lt;input type=&quot;file&quot; id=&quot;myFile&quot; name=&quot;file&quot;&amp;gt;&amp;lt;/input&amp;gt;      &amp;lt;input type=&quot;submit&quot; va">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-25T15:10:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="文件上传">
+<meta name="twitter:description" content="简单的文件上传1234&amp;lt;form id=&quot;uploadForm&quot; method=&quot;POST&quot; action=&quot;upload&quot; enctype=&quot;multipart/form-data&quot;&amp;gt;      &amp;lt;input type=&quot;file&quot; id=&quot;myFile&quot; name=&quot;file&quot;&amp;gt;&amp;lt;/input&amp;gt;      &amp;lt;input type=&quot;submit&quot; va">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'GAJYA'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://gajya.github.io/2017/09/26/文件上传/">
+
+
+
+
+
+  <title>文件上传 | GAJYA的个人博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ed89dc2fd70eab78ebfc62962622727b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">GAJYA的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://gajya.github.io/2017/09/26/文件上传/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GAJYA">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GAJYA的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">文件上传</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-26T15:41:07+08:00">
+                2017-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/javascript/h5/" itemprop="url" rel="index">
+                    <span itemprop="name">h5</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="简单的文件上传"><a href="#简单的文件上传" class="headerlink" title="简单的文件上传"></a>简单的文件上传</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"uploadForm"</span> <span class="attr">method</span>=<span class="string">"POST"</span> <span class="attr">action</span>=<span class="string">"upload"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"myFile"</span> <span class="attr">name</span>=<span class="string">"file"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这是一个最简单的文件上传。但是。。。ummmm，够胆你就提交这样的代码吧</p>
+<a id="more"></a>
+<h2 id="常用的上传方式——FormData"><a href="#常用的上传方式——FormData" class="headerlink" title="常用的上传方式——FormData"></a>常用的上传方式——FormData</h2><p>通过在脚本里新建FormData对象，把file对象设置到表单项中，然后利用XMLHttpRequest异步上传到服务器：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line"><span class="keyword">var</span> formData = <span class="keyword">new</span> FormData()</span><br><span class="line"><span class="keyword">var</span> fileInput = <span class="built_in">document</span>.getElementById(<span class="string">'myFil</span></span><br><span class="line"><span class="string">                                        e'</span>)</span><br><span class="line"><span class="keyword">var</span> file = fileInput.files[<span class="number">0</span>]</span><br><span class="line">formData.append(<span class="string">'filename'</span>, file)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(formData) <span class="comment">// 打印不出来东西</span></span><br><span class="line"><span class="comment">// 直接打印是看不到的，要用FormData的get()和getAll()方法</span></span><br><span class="line">formData.getAll(<span class="string">"filename"</span>)</span><br><span class="line"></span><br><span class="line">xhr.open(<span class="string">"post"</span>, <span class="string">'/upload.js'</span>)</span><br><span class="line"></span><br><span class="line">xhr.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.status === <span class="number">200</span>) &#123;</span><br><span class="line">        <span class="comment">// 对请求成功的处理</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"请求成功"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">xhr.send(formData)</span><br><span class="line">xhr = <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+<p>以上，可以完成最基本的需求</p>
+<p><a href="https://www.jianshu.com/p/46e6e03a0d53" target="_blank" rel="noopener">通过jQuery Ajax使用FormData对象上传文件</a></p>
+<h2 id="上传进度"><a href="#上传进度" class="headerlink" title="上传进度"></a>上传进度</h2><p>XMLHttpRequest Level 2中，传送数据的时候，有一个progress事件，上传数据progress事件属于XMLHttpRequest.upload对象，上传数据过程中会触发，这个对象拥有下列方法：</p>
+<p>这个对象拥有下列下列方法：</p>
+<ul>
+<li>onloadstart</li>
+<li>onprogress</li>
+<li>onabort</li>
+<li>onerror</li>
+<li>onload</li>
+<li>ontimeout</li>
+<li>onloadend</li>
+</ul>
+<p>这些方法在XHR对象中都存在同名版本，区别是后者是用于加载资源时，而前者用于资源上传时。其中onprogress 事件回调方法可用于跟踪资源上传的进度，它的event参数对象包含两个重要的属性loaded和total。分别代表当前已上传的字节数（number of bytes）和文件的总字节数。比如我们可以这样计算进度百分比：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xhr.upload.onprogress = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (e.lengthComputable) &#123; <span class="comment">// lengthComputable ---- 文件总大小是否可知</span></span><br><span class="line">        <span class="keyword">var</span> percent = (e.loaded / e.total) * <span class="number">100</span></span><br><span class="line">        <span class="comment">// 对进度进行处理</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现代浏览器配合h5提供的<code>progress</code>享用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">progress</span> <span class="attr">id</span>=<span class="string">"myProgress"</span> <span class="attr">value</span>=<span class="string">"50"</span> <span class="attr">max</span>=<span class="string">"100"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">progress</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其value属性绑定上面代码中的<code>percent</code>的值即可。</p>
+<p><strong>因为xhr.upload.onprogress在上传阶段(即xhr.send()之后，xhr.readystate=2之前)触发，每50ms触发一次。所以文件太小网络环境好的时候是直接到100%的。</strong></p>
+<h2 id="图片预览"><a href="#图片预览" class="headerlink" title="图片预览"></a>图片预览</h2><p>普通青年的图片预览方式是待文件上传成功后，后台返回上传文件的url，然后把预览图片的img元素的src指向该url。这其实达不到预览的效果和目的。</p>
+<p>属于文艺青年的现代浏览器又登场了：“使用HTML5的FileReader API吧！” 让我们直接上代码，直奔主题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleImageFile</span>(<span class="params">file</span>) </span>&#123;</span><br><span class="line">       <span class="keyword">var</span> previewArea = <span class="built_in">document</span>.getElementById(<span class="string">'previewArea'</span>);</span><br><span class="line">       <span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>);</span><br><span class="line">       <span class="keyword">var</span> fileInput = <span class="built_in">document</span>.getElementById(<span class="string">"myFile"</span>);</span><br><span class="line">       <span class="keyword">var</span> file = fileInput.files[<span class="number">0</span>];</span><br><span class="line">       img.file = file;</span><br><span class="line">       previewArea.appendChild(img);</span><br><span class="line"></span><br><span class="line">       <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">       reader.onload = (<span class="function"><span class="keyword">function</span>(<span class="params">aImg</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">                 aImg.src = e.target.result;</span><br><span class="line">            &#125;</span><br><span class="line">       &#125;)(img);</span><br><span class="line">       reader.readAsDataURL(file);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里我们使用FileReader来处理图片的异步加载。在创建新的FileReader对象之后，我们建立了onload函数，然后调用readAsDataURL()开始在后台进行读取操作。当图像文件加载后，转换成一个 data: URL，并传递到onload回调函数中设置给img的src。</p>
+<p>另外我们还可以通过使用对象URL来实现预览</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">"img"</span>);</span><br><span class="line">img.src = <span class="built_in">window</span>.URL.createObjectURL(file);;</span><br><span class="line">img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 明确地通过调用释放</span></span><br><span class="line">    <span class="built_in">window</span>.URL.revokeObjectURL(<span class="keyword">this</span>.src);</span><br><span class="line">&#125;</span><br><span class="line">previewArea.appendChild(img);</span><br></pre></td></tr></table></figure>
+<h2 id="多文件上传"><a href="#多文件上传" class="headerlink" title="多文件上传"></a>多文件上传</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"myFile"</span> <span class="attr">multiple</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>此时代码里拿到的FileUpload对象的files属性就是一个选中的多文件的数组了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fileInput = <span class="built_in">document</span>.getElementById(<span class="string">"myFile"</span>);</span><br><span class="line"><span class="keyword">var</span> files = fileInput.files;</span><br><span class="line"><span class="keyword">var</span> formData = <span class="keyword">new</span> FormData();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; files.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> file = files[i];</span><br><span class="line">    formData.append(<span class="string">'files[]'</span>, file, file.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>FormData的append方法提供第三个可选参数用于指定文件名，这样就可以使用同一个表单项名，然后用文件名区分上传的多个文件。这样也方便前后台的循环操作。</p>
+<h2 id="拖拽选择文件"><a href="#拖拽选择文件" class="headerlink" title="拖拽选择文件"></a>拖拽选择文件</h2><p>利用HTML5的drag &amp; drop事件来实现对拖拽的支持。首先我们可能需要确定一个允许拖放的区域，然后绑定相应的事件进行处理。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dropArea</span><br><span class="line"></span><br><span class="line">dropArea = <span class="built_in">document</span>.getElementById(<span class="string">"dropArea"</span>)</span><br><span class="line">dropArea.addEventListener(<span class="string">"dragenter"</span>, handleDragenter, <span class="literal">false</span>)</span><br><span class="line">dropArea.addEventListener(<span class="string">"dragover"</span>, handleDragover, <span class="literal">false</span>)</span><br><span class="line">dropArea.addEventListener(<span class="string">"drop"</span>, handleDrop, <span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 阻止dragenter和dragover的默认行为，这样才能使drop事件被触发</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleDragenter</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    e.stopPropagation()</span><br><span class="line">    e.preventDefault()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleDragover</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    e.stopPropagation()</span><br><span class="line">    e.preventDefault()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleDrop</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    e.stopPropagation()</span><br><span class="line">    e.preventDefault()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> dt = e.dataTransfer</span><br><span class="line">    <span class="keyword">var</span> files = dt.files</span><br><span class="line"></span><br><span class="line">    <span class="comment">// handle files ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里可以把通过事件对象的dataTransfer拿到的files数组和之前相同处理，以实现预览上传等功能。有了这些事件回调，我们也可以在不同的事件给我们UI元素添加不同的class来实现更好交互效果。</p>
+<h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2><p>此外上传还有二进制上传，借用iframe实现上传，详情请参考<a href="https://juejin.im/entry/590ad4682f301e00582a78b5" target="_blank" rel="noopener">这篇文章</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="[www.qcloud.com](https://link.juejin.im/?target=https%3A%2F%2Fwww.qcloud.com%2Fcommunity%2Farticle%2F985614%3FfromSource%3Dgwzcw.114059.114059.114059">文件上传那些事儿</a></p>
+<p><a href="https://www.jianshu.com/p/374e9b9d1fb1" target="_blank" rel="noopener">前端文件上传基础</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FormData" target="_blank" rel="noopener">FormData</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Drag_and_Drop_API" target="_blank" rel="noopener">html拖放API</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/h5/" rel="tag"># h5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/19/vue-cli的使用方法/" rel="prev" title="vue-cli的使用方法">
+                vue-cli的使用方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTg3MS8xNjM5OA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="GAJYA">
+            
+              <p class="site-author-name" itemprop="name">GAJYA</p>
+              <p class="site-description motion-element" itemprop="description">We lie best when we lie to ourselves!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://hcysun.me/vue-design/" title="Vue技术内幕" target="_blank">Vue技术内幕</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://ustbhuangyi.github.io/vue-analysis/" title="Vue.js 技术揭秘" target="_blank">Vue.js 技术揭秘</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的文件上传"><span class="nav-number">1.</span> <span class="nav-text">简单的文件上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的上传方式——FormData"><span class="nav-number">2.</span> <span class="nav-text">常用的上传方式——FormData</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传进度"><span class="nav-number">3.</span> <span class="nav-text">上传进度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片预览"><span class="nav-number">4.</span> <span class="nav-text">图片预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多文件上传"><span class="nav-number">5.</span> <span class="nav-text">多文件上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拖拽选择文件"><span class="nav-number">6.</span> <span class="nav-text">拖拽选择文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#end"><span class="nav-number">7.</span> <span class="nav-text">end</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GAJYA</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="footer-custom"><p>Dose the walker choose the path, or the path the walker?</p><p></p></div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"mobile":{"show":true,"scale":0.5},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
