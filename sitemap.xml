@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://gajya.github.io/2019/03/05/test-post/</loc>
+    
+    <lastmod>2019-03-04T16:20:10.994Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://gajya.github.io/2018/12/20/Vue%E6%9C%AC%E8%B4%A8/</loc>
+    
+    <lastmod>2019-03-04T16:15:35.508Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://gajya.github.io/2019/02/18/%5B1,%202,%203%5D.map(parseInt)%20%E4%B8%BA%E4%BD%95%E8%BF%94%E5%9B%9E%5B1,NaN,NaN%5D/</loc>
     
     <lastmod>2019-03-04T15:48:43.216Z</lastmod>
@@ -44,13 +58,6 @@
   </url>
   
   <url>
-    <loc>http://gajya.github.io/2018/12/20/Vue%E6%9C%AC%E8%B4%A8/</loc>
-    
-    <lastmod>2019-03-04T15:20:51.554Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://gajya.github.io/2018/12/18/process.env.NODE_ENV/</loc>
     
     <lastmod>2019-03-04T15:19:24.066Z</lastmod>
@@ -65,7 +72,7 @@
   </url>
   
   <url>
-    <loc>http://gajya.github.io/2018/09/20/v-for%E4%B8%AD%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%B7%BB%E5%8A%A0%E5%94%AF%E4%B8%80%E7%9A%84key/</loc>
+    <loc>http://gajya.github.io/2018/10/10/hexo%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2018-10-25T15:10:38.000Z</lastmod>
     
@@ -79,7 +86,14 @@
   </url>
   
   <url>
-    <loc>http://gajya.github.io/2017/09/26/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</loc>
+    <loc>http://gajya.github.io/2018/09/20/v-for%E4%B8%AD%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%B7%BB%E5%8A%A0%E5%94%AF%E4%B8%80%E7%9A%84key/</loc>
+    
+    <lastmod>2018-10-25T15:10:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://gajya.github.io/2017/10/19/vue-cli%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2018-10-25T15:10:38.000Z</lastmod>
     
@@ -87,6 +101,13 @@
   
   <url>
     <loc>http://gajya.github.io/2018/06/21/Vuelidate/</loc>
+    
+    <lastmod>2018-10-25T15:10:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://gajya.github.io/2017/09/26/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</loc>
     
     <lastmod>2018-10-25T15:10:38.000Z</lastmod>
     
@@ -101,20 +122,6 @@
   
   <url>
     <loc>http://gajya.github.io/2018/10/10/ES6%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
-    
-    <lastmod>2018-10-25T15:10:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://gajya.github.io/2018/10/10/hexo%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    
-    <lastmod>2018-10-25T15:10:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://gajya.github.io/2017/10/19/vue-cli%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2018-10-25T15:10:38.000Z</lastmod>
     
