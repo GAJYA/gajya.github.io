@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="情况1使用vue init mpvue/mpvue-quickstart my-project 初始化项目却报找不到app.json  解决办法 出错原因：版本问题，最新版本的mpvue 构建出来的代码在 dist/wx 下面  project.config.json里miniprogramRoot 改成 dist/wx/ GitHub PR 情况2删除了src文件下所有文件，main.js中写c">
+<meta name="description" content="情况1使用vue init mpvue/mpvue-quickstart my-project 初始化项目却报找不到app.json  解决办法 出错原因：版本问题，最新版本的mpvue 构建出来的代码在 dist/wx 下面  project.config.json里miniprogramRoot 改成 dist/wx/ GitHub PR">
 <meta name="keywords" content="前端,小程序,mpvue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mpvue打包没有.json等配置文件的解决方法">
 <meta property="og:url" content="http://gajya.github.io/2019/03/07/mpvue打包没有-json等配置文件的解决方法/index.html">
 <meta property="og:site_name" content="GAJYA的个人博客">
-<meta property="og:description" content="情况1使用vue init mpvue/mpvue-quickstart my-project 初始化项目却报找不到app.json  解决办法 出错原因：版本问题，最新版本的mpvue 构建出来的代码在 dist/wx 下面  project.config.json里miniprogramRoot 改成 dist/wx/ GitHub PR 情况2删除了src文件下所有文件，main.js中写c">
+<meta property="og:description" content="情况1使用vue init mpvue/mpvue-quickstart my-project 初始化项目却报找不到app.json  解决办法 出错原因：版本问题，最新版本的mpvue 构建出来的代码在 dist/wx 下面  project.config.json里miniprogramRoot 改成 dist/wx/ GitHub PR">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-07T03:07:00.933Z">
+<meta property="og:updated_time" content="2019-04-28T07:57:50.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mpvue打包没有.json等配置文件的解决方法">
-<meta name="twitter:description" content="情况1使用vue init mpvue/mpvue-quickstart my-project 初始化项目却报找不到app.json  解决办法 出错原因：版本问题，最新版本的mpvue 构建出来的代码在 dist/wx 下面  project.config.json里miniprogramRoot 改成 dist/wx/ GitHub PR 情况2删除了src文件下所有文件，main.js中写c">
+<meta name="twitter:description" content="情况1使用vue init mpvue/mpvue-quickstart my-project 初始化项目却报找不到app.json  解决办法 出错原因：版本问题，最新版本的mpvue 构建出来的代码在 dist/wx 下面  project.config.json里miniprogramRoot 改成 dist/wx/ GitHub PR">
 
 
 
@@ -382,6 +382,7 @@
 </blockquote>
 <p>project.config.json里miniprogramRoot 改成 dist/wx/</p>
 <p><a href="https://github.com/mpvue/mpvue-quickstart/commit/3fcca8fb24415a6d3321f967e50a39db7a088508#diff-08ddb1b50abf760ac6ed31dddb878377R8" target="_blank" rel="noopener">GitHub PR</a></p>
+<a id="more"></a>
 <h2 id="情况2"><a href="#情况2" class="headerlink" title="情况2"></a>情况2</h2><p>删除了src文件下所有文件，main.js中写config内容，打包后小程序提示查找不到‘app.json’文件。mpvue重新打包，只生成内容文件无配置文件。</p>
 <h2 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h2><blockquote>
 <p>出错原因：版本问题，最新版本的cli程序不再生成json文件了，得自己去写</p>

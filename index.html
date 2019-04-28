@@ -555,27 +555,19 @@
 
       
         
-          
-            <h2 id="情况1"><a href="#情况1" class="headerlink" title="情况1"></a>情况1</h2><p>使用vue init mpvue/mpvue-quickstart my-project 初始化项目却报找不到app.json </p>
+          <h2 id="情况1"><a href="#情况1" class="headerlink" title="情况1"></a>情况1</h2><p>使用vue init mpvue/mpvue-quickstart my-project 初始化项目却报找不到app.json </p>
 <h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><blockquote>
 <p>出错原因：版本问题，最新版本的mpvue 构建出来的代码在 dist/wx 下面</p>
 </blockquote>
 <p>project.config.json里miniprogramRoot 改成 dist/wx/</p>
 <p><a href="https://github.com/mpvue/mpvue-quickstart/commit/3fcca8fb24415a6d3321f967e50a39db7a088508#diff-08ddb1b50abf760ac6ed31dddb878377R8" target="_blank" rel="noopener">GitHub PR</a></p>
-<h2 id="情况2"><a href="#情况2" class="headerlink" title="情况2"></a>情况2</h2><p>删除了src文件下所有文件，main.js中写config内容，打包后小程序提示查找不到‘app.json’文件。mpvue重新打包，只生成内容文件无配置文件。</p>
-<h2 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h2><blockquote>
-<p>出错原因：版本问题，最新版本的cli程序不再生成json文件了，得自己去写</p>
-</blockquote>
-<p><strong>1. 把packpage.json里的mpvue-loade后面的‘^’去掉，固定版本号，重新安装依赖即可。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;mpvue-loader&quot;: &quot;^1.0.13&quot;, =&gt; &quot;mpvue-loader&quot;: &quot;1.0.13&quot;,</span><br></pre></td></tr></table></figure>
-<p><strong>2. 自己写就完全ojbk了啊ヽ(｀Д´)ﾉ︵ ┻━┻ ┻━┻ （浪费我的感情）</strong></p>
-<h2 id="指定版本号"><a href="#指定版本号" class="headerlink" title="指定版本号"></a>指定版本号</h2><ul>
-<li>‘2.0.0’ 表示安装指定的版本号，也就是安装2.0.0版本。</li>
-<li>‘~2.0.0’ 表示安装2.0.x的最新版本。</li>
-<li>‘^2.0.0’ 表示安装2.x.x的最新版本。</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/07/mpvue打包没有-json等配置文件的解决方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

@@ -54,16 +54,18 @@
     <link href="http://gajya.github.io/2019/03/07/mpvue%E6%89%93%E5%8C%85%E6%B2%A1%E6%9C%89-json%E7%AD%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
     <id>http://gajya.github.io/2019/03/07/mpvue打包没有-json等配置文件的解决方法/</id>
     <published>2019-03-07T02:46:54.000Z</published>
-    <updated>2019-03-07T03:07:00.933Z</updated>
+    <updated>2019-04-28T07:57:50.815Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="情况1"><a href="#情况1" class="headerlink" title="情况1"></a>情况1</h2><p>使用vue init mpvue/mpvue-quickstart my-project 初始化项目却报找不到app.json </p><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><blockquote><p>出错原因：版本问题，最新版本的mpvue 构建出来的代码在 dist/wx 下面</p></blockquote><p>project.config.json里miniprogramRoot 改成 dist/wx/</p><p><a href="https://github.com/mpvue/mpvue-quickstart/commit/3fcca8fb24415a6d3321f967e50a39db7a088508#diff-08ddb1b50abf760ac6ed31dddb878377R8" target="_blank" rel="noopener">GitHub PR</a></p><h2 id="情况2"><a href="#情况2" class="headerlink" title="情况2"></a>情况2</h2><p>删除了src文件下所有文件，main.js中写config内容，打包后小程序提示查找不到‘app.json’文件。mpvue重新打包，只生成内容文件无配置文件。</p><h2 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h2><blockquote><p>出错原因：版本问题，最新版本的cli程序不再生成json文件了，得自己去写</p></blockquote><p><strong>1. 把packpage.json里的mpvue-loade后面的‘^’去掉，固定版本号，重新安装依赖即可。</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;mpvue-loader&quot;: &quot;^1.0.13&quot;, =&gt; &quot;mpvue-loader&quot;: &quot;1.0.13&quot;,</span><br></pre></td></tr></table></figure><p><strong>2. 自己写就完全ojbk了啊ヽ(｀Д´)ﾉ︵ ┻━┻ ┻━┻ （浪费我的感情）</strong></p><h2 id="指定版本号"><a href="#指定版本号" class="headerlink" title="指定版本号"></a>指定版本号</h2><ul><li>‘2.0.0’ 表示安装指定的版本号，也就是安装2.0.0版本。</li><li>‘~2.0.0’ 表示安装2.0.x的最新版本。</li><li>‘^2.0.0’ 表示安装2.x.x的最新版本。</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="情况1"><a href="#情况1" class="headerlink" title="情况1"></a>情况1</h2><p>使用vue init mpvue/mpvue-quickstart my-project 初始化项目却报找不到app.json </p><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><blockquote><p>出错原因：版本问题，最新版本的mpvue 构建出来的代码在 dist/wx 下面</p></blockquote><p>project.config.json里miniprogramRoot 改成 dist/wx/</p><p><a href="https://github.com/mpvue/mpvue-quickstart/commit/3fcca8fb24415a6d3321f967e50a39db7a088508#diff-08ddb1b50abf760ac6ed31dddb878377R8" target="_blank" rel="noopener">GitHub PR</a></p><a id="more"></a><h2 id="情况2"><a href="#情况2" class="headerlink" title="情况2"></a>情况2</h2><p>删除了src文件下所有文件，main.js中写config内容，打包后小程序提示查找不到‘app.json’文件。mpvue重新打包，只生成内容文件无配置文件。</p><h2 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h2><blockquote><p>出错原因：版本问题，最新版本的cli程序不再生成json文件了，得自己去写</p></blockquote><p><strong>1. 把packpage.json里的mpvue-loade后面的‘^’去掉，固定版本号，重新安装依赖即可。</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;mpvue-loader&quot;: &quot;^1.0.13&quot;, =&gt; &quot;mpvue-loader&quot;: &quot;1.0.13&quot;,</span><br></pre></td></tr></table></figure><p><strong>2. 自己写就完全ojbk了啊ヽ(｀Д´)ﾉ︵ ┻━┻ ┻━┻ （浪费我的感情）</strong></p><h2 id="指定版本号"><a href="#指定版本号" class="headerlink" title="指定版本号"></a>指定版本号</h2><ul><li>‘2.0.0’ 表示安装指定的版本号，也就是安装2.0.0版本。</li><li>‘~2.0.0’ 表示安装2.0.x的最新版本。</li><li>‘^2.0.0’ 表示安装2.x.x的最新版本。</li></ul>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;情况1&quot;&gt;&lt;a href=&quot;#情况1&quot; class=&quot;headerlink&quot; title=&quot;情况1&quot;&gt;&lt;/a&gt;情况1&lt;/h2&gt;&lt;p&gt;使用vue init mpvue/mpvue-quickstart my-project 初始化项目却报找不到app.json &lt;/
-      
+      &lt;h2 id=&quot;情况1&quot;&gt;&lt;a href=&quot;#情况1&quot; class=&quot;headerlink&quot; title=&quot;情况1&quot;&gt;&lt;/a&gt;情况1&lt;/h2&gt;&lt;p&gt;使用vue init mpvue/mpvue-quickstart my-project 初始化项目却报找不到app.json &lt;/p&gt;
+&lt;h2 id=&quot;解决办法&quot;&gt;&lt;a href=&quot;#解决办法&quot; class=&quot;headerlink&quot; title=&quot;解决办法&quot;&gt;&lt;/a&gt;解决办法&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;出错原因：版本问题，最新版本的mpvue 构建出来的代码在 dist/wx 下面&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;project.config.json里miniprogramRoot 改成 dist/wx/&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/mpvue/mpvue-quickstart/commit/3fcca8fb24415a6d3321f967e50a39db7a088508#diff-08ddb1b50abf760ac6ed31dddb878377R8&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub PR&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -432,9 +434,9 @@
     
       <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="面试" scheme="http://gajya.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
-    
       <category term="h5" scheme="http://gajya.github.io/tags/h5/"/>
+    
+      <category term="面试" scheme="http://gajya.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
