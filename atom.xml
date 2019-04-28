@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gajya.github.io/"/>
-  <updated>2019-03-07T03:07:00.933Z</updated>
+  <updated>2019-04-28T07:53:50.711Z</updated>
   <id>http://gajya.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用饿了么表单报错，提示filed命名冲突</title>
+    <link href="http://gajya.github.io/2019/04/28/%E4%BD%BF%E7%94%A8%E9%A5%BF%E4%BA%86%E4%B9%88%E8%A1%A8%E5%8D%95%E6%8A%A5%E9%94%99%EF%BC%8C%E6%8F%90%E7%A4%BAfiled%E5%91%BD%E5%90%8D%E5%86%B2%E7%AA%81/"/>
+    <id>http://gajya.github.io/2019/04/28/使用饿了么表单报错，提示filed命名冲突/</id>
+    <published>2019-04-28T07:48:00.000Z</published>
+    <updated>2019-04-28T07:53:50.711Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="饿了么表单报错，vee-validate的（filed）命名冲突"><a href="#饿了么表单报错，vee-validate的（filed）命名冲突" class="headerlink" title="饿了么表单报错，vee-validate的（filed）命名冲突"></a>饿了么表单报错，vee-validate的（filed）命名冲突</h3><p>原因可能是项目使用了vee-validate，请自行检查，如果是，解决方法如下：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">main.js</span><br><span class="line"></span><br><span class="line"><span class="comment">// 饿了么表单报错，vee-validate的命名冲突，利用自定义vee-validate配置解决这个问题</span></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  aria: <span class="literal">true</span>,</span><br><span class="line">  classNames: &#123;&#125;,</span><br><span class="line">  classes: <span class="literal">false</span>,</span><br><span class="line">  delay: <span class="number">0</span>,</span><br><span class="line">  dictionary: <span class="literal">null</span>,</span><br><span class="line">  errorBagName: <span class="string">'errors'</span>, <span class="comment">// change if property conflicts</span></span><br><span class="line">  events: <span class="string">'input|blur'</span>,</span><br><span class="line">  fieldsBagName: <span class="string">'fields2'</span>, <span class="comment">// 把这个名字改成fields之外的就可以了</span></span><br><span class="line">  i18n: <span class="literal">null</span>, <span class="comment">// the vue-i18n plugin instance</span></span><br><span class="line">  i18nRootKey: <span class="string">'validations'</span>, <span class="comment">// the nested key under which the validation messages will be located</span></span><br><span class="line">  inject: <span class="literal">true</span>,</span><br><span class="line">  locale: <span class="string">'en'</span>,</span><br><span class="line">  validity: <span class="literal">false</span>,</span><br><span class="line">  useConstraintAttrs: <span class="literal">true</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//vue安装插件时候，传入配置</span></span><br><span class="line">Vue.use(VeeValidate, config);</span><br></pre></td></tr></table></figure><p>可以利用自定义vee-validate配置解决这个问题，在main.js里加入config配置项</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;饿了么表单报错，vee-validate的（filed）命名冲突&quot;&gt;&lt;a href=&quot;#饿了么表单报错，vee-validate的（filed）命名冲突&quot; class=&quot;headerlink&quot; title=&quot;饿了么表单报错，vee-validate的（filed）
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="vue" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/vue/"/>
+    
+      <category term="工具" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/vue/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="vue" scheme="http://gajya.github.io/tags/vue/"/>
+    
+      <category term="vue-工具" scheme="http://gajya.github.io/tags/vue-%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>mpvue打包没有.json等配置文件的解决方法</title>
@@ -399,9 +432,9 @@
     
       <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="h5" scheme="http://gajya.github.io/tags/h5/"/>
-    
       <category term="面试" scheme="http://gajya.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="h5" scheme="http://gajya.github.io/tags/h5/"/>
     
   </entry>
   
