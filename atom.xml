@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gajya.github.io/"/>
-  <updated>2019-04-28T07:53:50.711Z</updated>
+  <updated>2019-05-06T02:19:07.179Z</updated>
   <id>http://gajya.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue 组件调用组件报错：did you register the component correctly?</title>
+    <link href="http://gajya.github.io/2019/05/06/vue-%E7%BB%84%E4%BB%B6%E8%B0%83%E7%94%A8%E7%BB%84%E4%BB%B6%E6%8A%A5%E9%94%99%EF%BC%9Adid-you-register-the-component-correctly/"/>
+    <id>http://gajya.github.io/2019/05/06/vue-组件调用组件报错：did-you-register-the-component-correctly/</id>
+    <published>2019-05-06T02:12:11.000Z</published>
+    <updated>2019-05-06T02:19:07.179Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>一般报这个错的原因都是我们使用了未注册的组件。</strong></p><p>Vue.js 提供了 2 种组件的注册方式，全局注册和局部注册。</p><ol><li>先引入（确保路径没问题）</li><li>components注册</li><li>引入的组件保持name一致<a id="more"></a></li></ol><p><strong>二般情况，请先查看引入的该组件下是否有其他子组件，如果子组件报错，也可能会导致报这个错</strong></p><p><img src="/2019/05/06/vue-组件调用组件报错：did-you-register-the-component-correctly/1557108559407.png" alt="1557108559407"></p><p>举个栗子：</p><p>以下，UseCustomers组件下引入的chooseUser组件中，vuex中的actions未引入，导致的报错。。。</p><p><img src="/2019/05/06/vue-组件调用组件报错：did-you-register-the-component-correctly/1557107758929.png" alt="1557107758929"></p><p><strong>情况三，可能是你的<code>script</code>标签未闭合，请自行检查</strong></p><p><strong>情况四，可能是你的<code>template</code>标签里的html代码有误，例如标签未闭合</strong></p><p><strong>情况五，局部注册时候，是<code>components</code>，请检查是否漏了<code>&#39;s&#39;</code></strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;一般报这个错的原因都是我们使用了未注册的组件。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Vue.js 提供了 2 种组件的注册方式，全局注册和局部注册。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先引入（确保路径没问题）&lt;/li&gt;
+&lt;li&gt;components注册&lt;/li&gt;
+&lt;li&gt;引入的组件保持name一致&lt;/li&gt;&lt;/ol&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>使用饿了么表单报错，提示filed命名冲突</title>
@@ -434,9 +457,9 @@
     
       <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="h5" scheme="http://gajya.github.io/tags/h5/"/>
-    
       <category term="面试" scheme="http://gajya.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="h5" scheme="http://gajya.github.io/tags/h5/"/>
     
   </entry>
   

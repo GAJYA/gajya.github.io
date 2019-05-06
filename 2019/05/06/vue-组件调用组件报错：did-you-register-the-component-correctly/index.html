@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="前端,vue,">
+  <meta name="keywords" content="gajya, GAJYA">
 
 
 
@@ -81,18 +81,20 @@
 
 
 
-<meta name="description" content="We lie best when we lie to ourselves!">
-<meta name="keywords" content="前端,vue">
+<meta name="description" content="一般报这个错的原因都是我们使用了未注册的组件。 Vue.js 提供了 2 种组件的注册方式，全局注册和局部注册。  先引入（确保路径没问题） components注册 引入的组件保持name一致">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为什么使用v-for要加上唯一的key">
-<meta property="og:url" content="http://gajya.github.io/2018/09/20/v-for中为什么要添加唯一的key/index.html">
+<meta property="og:title" content="vue 组件调用组件报错：did you register the component correctly?">
+<meta property="og:url" content="http://gajya.github.io/2019/05/06/vue-组件调用组件报错：did-you-register-the-component-correctly/index.html">
 <meta property="og:site_name" content="GAJYA的个人博客">
-<meta property="og:description" content="We lie best when we lie to ourselves!">
+<meta property="og:description" content="一般报这个错的原因都是我们使用了未注册的组件。 Vue.js 提供了 2 种组件的注册方式，全局注册和局部注册。  先引入（确保路径没问题） components注册 引入的组件保持name一致">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-25T15:10:38.000Z">
+<meta property="og:image" content="http://gajya.github.io/2019/05/06/vue-组件调用组件报错：did-you-register-the-component-correctly/1557108559407.png">
+<meta property="og:image" content="http://gajya.github.io/2019/05/06/vue-组件调用组件报错：did-you-register-the-component-correctly/1557107758929.png">
+<meta property="og:updated_time" content="2019-05-06T02:19:07.179Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="为什么使用v-for要加上唯一的key">
-<meta name="twitter:description" content="We lie best when we lie to ourselves!">
+<meta name="twitter:title" content="vue 组件调用组件报错：did you register the component correctly?">
+<meta name="twitter:description" content="一般报这个错的原因都是我们使用了未注册的组件。 Vue.js 提供了 2 种组件的注册方式，全局注册和局部注册。  先引入（确保路径没问题） components注册 引入的组件保持name一致">
+<meta name="twitter:image" content="http://gajya.github.io/2019/05/06/vue-组件调用组件报错：did-you-register-the-component-correctly/1557108559407.png">
 
 
 
@@ -122,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://gajya.github.io/2018/09/20/v-for中为什么要添加唯一的key/">
+  <link rel="canonical" href="http://gajya.github.io/2019/05/06/vue-组件调用组件报错：did-you-register-the-component-correctly/">
 
 
 
 
 
-  <title>为什么使用v-for要加上唯一的key | GAJYA的个人博客</title>
+  <title>vue 组件调用组件报错：did you register the component correctly? | GAJYA的个人博客</title>
   
 
 
@@ -265,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gajya.github.io/2018/09/20/v-for中为什么要添加唯一的key/">
+    <link itemprop="mainEntityOfPage" href="http://gajya.github.io/2019/05/06/vue-组件调用组件报错：did-you-register-the-component-correctly/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GAJYA">
@@ -282,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">为什么使用v-for要加上唯一的key</h1>
+          <h1 class="post-title" itemprop="name headline">vue 组件调用组件报错：did you register the component correctly?</h1>
         
 
         <div class="post-meta">
@@ -294,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-20T15:52:22+08:00">
-                2018-09-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-06T10:12:11+08:00">
+                2019-05-06
               </time>
             
 
@@ -305,39 +307,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -345,7 +314,7 @@
 
           
           
-             <span id="/2018/09/20/v-for中为什么要添加唯一的key/" class="leancloud_visitors" data-flag-title="为什么使用v-for要加上唯一的key">
+             <span id="/2019/05/06/vue-组件调用组件报错：did-you-register-the-component-correctly/" class="leancloud_visitors" data-flag-title="vue 组件调用组件报错：did you register the component correctly?">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -376,7 +345,23 @@
       
 
       
-        
+        <p><strong>一般报这个错的原因都是我们使用了未注册的组件。</strong></p>
+<p>Vue.js 提供了 2 种组件的注册方式，全局注册和局部注册。</p>
+<ol>
+<li>先引入（确保路径没问题）</li>
+<li>components注册</li>
+<li>引入的组件保持name一致<a id="more"></a>
+</li>
+</ol>
+<p><strong>二般情况，请先查看引入的该组件下是否有其他子组件，如果子组件报错，也可能会导致报这个错</strong></p>
+<p><img src="/2019/05/06/vue-组件调用组件报错：did-you-register-the-component-correctly/1557108559407.png" alt="1557108559407"></p>
+<p>举个栗子：</p>
+<p>以下，UseCustomers组件下引入的chooseUser组件中，vuex中的actions未引入，导致的报错。。。</p>
+<p><img src="/2019/05/06/vue-组件调用组件报错：did-you-register-the-component-correctly/1557107758929.png" alt="1557107758929"></p>
+<p><strong>情况三，可能是你的<code>script</code>标签未闭合，请自行检查</strong></p>
+<p><strong>情况四，可能是你的<code>template</code>标签里的html代码有误，例如标签未闭合</strong></p>
+<p><strong>情况五，局部注册时候，是<code>components</code>，请检查是否漏了<code>&#39;s&#39;</code></strong></p>
+
       
     </div>
     
@@ -391,14 +376,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/前端/" rel="tag"># 前端</a>
-          
-            <a href="/tags/vue/" rel="tag"># vue</a>
-          
-        </div>
-      
 
       
       
@@ -408,8 +385,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/21/Vuelidate/" rel="next" title="Vuelidate">
-                <i class="fa fa-chevron-left"></i> Vuelidate
+              <a href="/2019/04/28/使用饿了么表单报错，提示filed命名冲突/" rel="next" title="使用饿了么表单报错，提示filed命名冲突">
+                <i class="fa fa-chevron-left"></i> 使用饿了么表单报错，提示filed命名冲突
               </a>
             
           </div>
@@ -417,10 +394,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/25/Vue响应式系统的基本原理/" rel="prev" title="Vue响应式系统的基本原理">
-                Vue响应式系统的基本原理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
