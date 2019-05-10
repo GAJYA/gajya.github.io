@@ -91,8 +91,8 @@
 <meta property="og:image" content="http://gajya.github.io/2019/05/09/浏览器的工作流程/浏览器主要结构.png">
 <meta property="og:image" content="http://gajya.github.io/2019/05/09/浏览器的工作流程/渲染引擎主流程.png">
 <meta property="og:image" content="http://gajya.github.io/2019/05/09/浏览器的工作流程/渲染引擎基本流程.png">
-<meta property="og:image" content="http://gajya.github.io/2019/05/09/浏览器的工作流程/微信图片_20190510145457.jpg">
-<meta property="og:updated_time" content="2019-05-10T06:56:51.364Z">
+<meta property="og:image" content="http://gajya.github.io/2019/05/09/浏览器的工作流程/why.jpg">
+<meta property="og:updated_time" content="2019-05-10T07:18:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器的工作流程">
 <meta name="twitter:description" content="浏览器的主要功能是将用户选择得web资源呈现出来，从服务器请求资源，并将其显示在浏览器窗口中，资源格式包括html、PDF、image、svg以及其他格式。用户通过URI(统一资源标识符)来指定所请求资源的位置。 浏览器的主要构成 用户界面——包括地址栏、后退/前进按钮/书签目录等，除了用来显示请求页面的主窗口外的其他部分 浏览器引擎——可以在用户界面和渲染引擎之间传送指令或在客户端本地缓存中读写">
@@ -383,8 +383,8 @@
 <p>解析过程是迭代的，具体详情请<a href="https://www.2cto.com/kf/201202/118111.html" target="_blank" rel="noopener">点击此处</a></p>
 <h4 id="转换-Translation"><a href="#转换-Translation" class="headerlink" title="转换 Translation"></a>转换 Translation</h4><p>解析一般在转换中使用——将输入文档转换为另一种格式。例如编译，编译器在将一段源码编译为机器码的时候，先将源码解析为解析树，然后将该树转换为一个机器码文档。</p>
 <h4 id="解析器类型-Types-of-parsers"><a href="#解析器类型-Types-of-parsers" class="headerlink" title="解析器类型 Types of parsers(????????????????????????)"></a>解析器类型 Types of parsers(????????????????????????)</h4><p>有两种基本的解析器——自顶向下解析以及自底向上解析，</p>
-<p>​     ?????????????????????????????<img src="/2019/05/09/浏览器的工作流程/微信图片_20190510145457.jpg" alt="微信图片_20190510145457"></p>
-<p>自底向上解析？？？？？？？？？？？？</p>
+<p>​     ?????????????????????????????</p>
+<p><div style="width: 200px;"><img src="/2019/05/09/浏览器的工作流程/why.jpg" alt="微信图片_20190510145457"></div><br>自底向上解析？？？？？？？？？？？？</p>
 <h4 id="自动化解析"><a href="#自动化解析" class="headerlink" title="自动化解析"></a>自动化解析</h4><p>解析器生成器是一种工具，可以自动生成解析器，只需要指定语言的文法——词汇及语法规则，它就可以生成一个解析器。</p>
 <p>webkit使用两个解析生成器——用于创建语法分析器的Flex和创建解析器的Bison。Flex的输入是一个包含了符号定义的正则表达式，Bison的输入是用<a href="https://www.jianshu.com/p/15efcb0c06c8" target="_blank" rel="noopener">BNF格式</a>表示的语法规则。</p>
 <h4 id="HTML解析器"><a href="#HTML解析器" class="headerlink" title="HTML解析器"></a>HTML解析器</h4><p>html解析器的工作是将html标识解析为解析树</p>
