@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gajya.github.io/"/>
-  <updated>2019-05-10T07:18:42.000Z</updated>
+  <updated>2019-05-19T02:00:00.610Z</updated>
   <id>http://gajya.github.io/</id>
   
   <author>
@@ -15,6 +15,69 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SOAP请求步骤</title>
+    <link href="http://gajya.github.io/2019/05/16/SOAP%E8%AF%B7%E6%B1%82%E6%AD%A5%E9%AA%A4/"/>
+    <id>http://gajya.github.io/2019/05/16/SOAP请求步骤/</id>
+    <published>2019-05-16T11:05:01.000Z</published>
+    <updated>2019-05-19T02:00:00.610Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>使用postman构造soap请求的方法：</strong></p><ol><li><p>将请求方法设置为POST。</p></li><li><p>打开Raw编辑器，并将body类型设置为“text / xml”。</p></li><li><p>在请求体中，根据需要定义SOAP Envelope，header和body标签。首先给出必要的SOAP Envelope标签，并定义所有的命名空间。给SOAP header和body。应在SOAP体中指定SOAP方法（操作）的名称。<br>代码中的实现：</p></li><li><p>先在cur-system.js和cur-system-url.js（三个环境都需要配置）里进行配置。</p></li><li><p>设置params，一般是这种形式：</p><ol><li><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">soapenv:Envelope</span> <span class="attr">xmlns:soapenv</span>=<span class="string">"http://schemas.xmlsoap.org/soap/envelope/"</span> <span class="attr">xmlns:xsd</span>=<span class="string">"http://www.w3.org/2001/XMLSchema"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">soapenv:Header</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">ns1:CSBHeader</span> <span class="attr">soapenv:actor</span>=<span class="string">"http://schemas.xmlsoap.org/soap/actor/next"</span> <span class="attr">soapenv:mustUnderstand</span>=<span class="string">"0"</span> <span class="attr">xmlns:ns1</span>=<span class="string">"http://www.shtel.com.cn/csb/v2/"</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">ServiceName</span>&gt;</span>QueryPointsInfoByCrmId<span class="tag">&lt;/<span class="name">ServiceName</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">ServiceVer</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">ServiceVer</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">Consumer</span>&gt;</span>CRMORDWEB<span class="tag">&lt;/<span class="name">Consumer</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">RequestTime</span>&gt;</span>2013-12-19T07:53:01.198Z<span class="tag">&lt;/<span class="name">RequestTime</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">ns1:CSBHeader</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">soapenv:Header</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">soapenv:Body</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">m:webSearchExchangePoints</span> <span class="attr">xmlns:m</span>=<span class="string">"http://src.ws.com"</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">ScoreInfo</span>&gt;</span></span><br><span class="line">                      <span class="tag">&lt;<span class="name">CrmId</span>&gt;</span>$&#123;this.custInfo.custNumber&#125;<span class="tag">&lt;/<span class="name">CrmId</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;/<span class="name">ScoreInfo</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">m:webSearchExchangePoints</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">soapenv:Body</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">soapenv:Envelope</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ol></li></ol><ol start="6"><li><p>调取接口方法</p></li><li><p>获取数据需要先进行格式化</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">import</span> xml2js <span class="keyword">from</span> <span class="string">"xml2js"</span> <span class="comment">// 注意：xml2js需要先引入</span></span><br><span class="line"> </span><br><span class="line"> curApi.queryPointsInfoByCrmId(param).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line"><span class="keyword">let</span> parser = <span class="keyword">new</span> xml2js.Parser();</span><br><span class="line">   parser.parseString(res.data,(err,result)=&gt;&#123;</span><br><span class="line">     <span class="keyword">this</span>.integral = result.ScoreInfo.body[<span class="number">0</span>].PointsUseable[<span class="number">0</span>] <span class="comment">// 当前可用积分</span></span><br><span class="line">   &#125;)</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;使用postman构造soap请求的方法：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;将请求方法设置为POST。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;打开Raw编辑器，并将body类型设置为“text / xml”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/"/>
+    
+      <category term="其它" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/%E5%85%B6%E5%AE%83/"/>
+    
+    
+      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
+    
+      <category term="其它" scheme="http://gajya.github.io/tags/%E5%85%B6%E5%AE%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://gajya.github.io/2019/05/12/status/"/>
+    <id>http://gajya.github.io/2019/05/12/status/</id>
+    <published>2019-05-12T06:39:42.237Z</published>
+    <updated>2019-05-12T07:05:18.912Z</updated>
+    
+    <content type="html"><![CDATA[const PHONE_NUM_STATUS_CD = {    V1000: {value: "1000", title: "未分派冻结", desc: "CRM系统新增或回收号码段资源时自动生成时0、1级状态"},    V1001: {value: "1001", title: "优质号码预留", desc: "CRM新增或回收号码资源时对2级及以上号码生成初始状态"},    V1002: {value: "1002", title: "空闲", desc: "号码分派到机构后变为空闲才能放号"},    V1003: {value: "1003", title: "不可用",desc: "不可用"},    V1005: {value: "1005", title: "拆机", desc: "拆机"},    V1097: {value: "1097", title: "电渠正式预占", desc: "电渠正式预占"},    V1099: {value: "1099", title: "电渠预占", desc: "电渠预占"},    V1100: {value: "1100", title: "靓号预占", desc: "靓号预占"},    V1101: {value: "1101", title: "预选", desc: "前台选一批号码时候设成预选状态，10分钟后预选状态自动转成空闲状态"},    V1102: {value: "1102", title: "选占", desc: "对于预选的号码，订单会选择其中一个号码进行选占。订单未提交前选占状态可以保持7天。如果7天选占状态未变成预占状态，自动转成空闲状态"},    V1103: {value: "1103", title: "预占未完工", desc: "已受理已配号后未竣工前号码状态"},    V1104: {value: "1104", title: "占用", desc: "用户已竣工使用的号码状态"},    V1105: {value: "1105", title: "释放", desc: "已拆机未过90天（冷冻期）状态"},    V1106: {value: "1106", title: "封存", desc: "用于不受批量修改号码状态的资源预留。封存状态的号码资源不受操作影响，批量分派号码时此状态号码不受影响保持原机构和号码状态不变。"},    V1107: {value: "1107", title: "封锁", desc: "优质号码签发后状态自动变更为封锁，用于批量分派号码预留资源使用"},    V1108: {value: "1108", title: "割接状态", desc: "用于网络工程割接需封锁不能使用号码资源使用（资源预留）"},    V1109: {value: "1109", title: "正在割接", desc: "用于网络工程割接进行中的在用资源封锁由系统自动生成"},    V1110: {value: "1110", title: "用户预选号", desc: "由网厅、自助终端等选号预留的号码资源。营业厅CRM系统选号受理界面无法显示该号码，但营业员凭相关凭证可以直接在系统录入该状态号码资源"},    V1111: {value: "1111", title: "预留", desc: "营业厅无法受理的预留号码资源"},    V1112: {value: "1112", title: "预拆", desc: "受理拆机未竣工前号码状态"},    V1113: {value: "1113", title: "备用", desc: "备用"},    V1114: {value: "1114", title: "测试号码", desc: "用于业务、工程测试时资源配置，该状态资源未经前台受理"},    V1115: {value: "1115", title: "制卡封锁", desc: "用于制卡资源规划预留，该资源还未制卡。"},    V1116: {value: "1116", title: "套卡预占", desc: "已制卡未批开号码资源预留，该资源已制卡"},    V1117: {value: "1117", title: "县区预留", desc: "用于未进行机构分派前号码资源规划及预留"},    V1118: {value: "1118", title: "市营销中心预留", desc: "用于未进行机构分派前号码资源规划及预留"},    V1119: {value: "1119", title: "待启用", desc: "用于省公司储备池的号码状态，标注未批准启用的号码"},    V1120: {value: "1120", title: "批量预占", desc: "批量预占"},    V1121: {value: "1121", title: "携号转入拆机", desc: "携号转入拆机"},    V1122: {value: "1122", title: "批开预占", desc: "批开预占"},    V1124: {value: "1124", title: "未激活", desc: "未激活"},    V1210: {value: "1210", title: "预调拨", desc: "号码调拨单新建占用的号码"},    V1901: {value: "1901", title: "预预选", desc: "预选前锁定"},    V2000: {value: "2000", title: "携号转出", desc: "携号转出"}}@MktMd(value = "RES-C-0017", desc = "营销资源卡实例状态")public class MktResCardInstStatus extends MktBaseMd {    public static final MktResCardInstStatus V1000 = new MktResCardInstStatus("1000", "可用", "UIM卡实例的初始状态");    public static final MktResCardInstStatus V1102 = new MktResCardInstStatus("1102", "预占", "UIM卡不可用状态的一种");    public static final MktResCardInstStatus V1104 = new MktResCardInstStatus("1104", "占用", "UIM卡不可用状态的一种");    public static final MktResCardInstStatus V1103 = new MktResCardInstStatus("1103", "冻结", "UIM卡不可用状态的一种");    public static final MktResCardInstStatus V1105 = new MktResCardInstStatus("1105", "待回收", "UIM卡不可用状态的一种");    public static final MktResCardInstStatus V1106 = new MktResCardInstStatus("1106", "废弃", "UIM卡不可用状态的一种");    public static final MktResCardInstStatus V1101 = new MktResCardInstStatus("1101", "预选", "前台选一批号码时候设成预选状态，一定时间后预选状态自动转成可用状态");    public static final MktResCardInstStatus V1107 = new MktResCardInstStatus("1107", "预拆", "受理拆机未竣工前号码状态");    public static final MktResCardInstStatus V1108 = new MktResCardInstStatus("1108", "拆机", "拆机");    public static final MktResCardInstStatus V1002 = new MktResCardInstStatus("1002", "保留", "保留");    public static final MktResCardInstStatus V1003 = new MktResCardInstStatus("1003", "封锁", "封锁");    public static final MktResCardInstStatus V1005 = new MktResCardInstStatus("1005", "未完工", "未完工");    public MktResCardInstStatus() {    }    public MktResCardInstStatus(String value, String title, String desc) {        super(value, title, desc);    }}]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+const PHONE_NUM_STATUS_CD = {
+    V1000: {value: &quot;1000&quot;, title: &quot;未分派冻结&quot;, desc: &quot;CRM系统新增或回收号码段资源时自动生成时0、1级状态&quot;},
+    V1001: {value: &quot;1001&quot;, t
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>浏览器的工作流程</title>
@@ -188,9 +251,9 @@
       <category term="es6" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/es6/"/>
     
     
-      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
-    
       <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
     
       <category term="es6" scheme="http://gajya.github.io/tags/es6/"/>
     
@@ -248,9 +311,9 @@
       <category term="es6" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/es6/"/>
     
     
-      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
-    
       <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
     
       <category term="es6" scheme="http://gajya.github.io/tags/es6/"/>
     
@@ -278,9 +341,9 @@
       <category term="es6" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/es6/"/>
     
     
-      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
-    
       <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
     
       <category term="es6" scheme="http://gajya.github.io/tags/es6/"/>
     
@@ -309,9 +372,9 @@
       <category term="es6" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/es6/"/>
     
     
-      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
-    
       <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
     
       <category term="es6" scheme="http://gajya.github.io/tags/es6/"/>
     
@@ -338,9 +401,9 @@
       <category term="javascript" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/"/>
     
     
-      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
-    
       <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
     
   </entry>
   
@@ -516,9 +579,9 @@
       <category term="es6" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/es6/"/>
     
     
-      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
-    
       <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
     
       <category term="es6" scheme="http://gajya.github.io/tags/es6/"/>
     
@@ -529,9 +592,9 @@
     <link href="http://gajya.github.io/2018/10/10/hexo%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>http://gajya.github.io/2018/10/10/hexo的常用命令/</id>
     <published>2018-10-10T10:32:25.000Z</published>
-    <updated>2018-10-25T15:10:38.000Z</updated>
+    <updated>2019-05-10T07:23:14.099Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h2><ul><li><code>hexo n &quot;我的博客&quot;</code> == <code>hexo new &quot;我的博客&quot;</code>    <strong>新建文章</strong></li><li><code>hexo p</code> == <code>hexo publish</code>   <strong>发布草稿 </strong></li><li><code>hexo g</code> == <code>hexo generate</code>   <strong>生成 </strong></li><li><code>hexo s</code> == <code>hexo server</code>   <strong>启动服务预览</strong></li><li><code>hexo d</code> == <code>hexo deploy</code>   <strong>部署</strong></li></ul><a id="more"></a><h3 id="完成后部署"><a href="#完成后部署" class="headerlink" title="完成后部署"></a>完成后部署</h3><blockquote><p>两个命令的作用是相同的 hexo generate –deploy hexo deploy –generate</p></blockquote><p>简写： <code>hexo d -g</code> #完成后部署 <code>hexo s -g</code> #完成后启动本地服务，可通过默认端口预览访问</p><h2 id="只展示部分博客内容"><a href="#只展示部分博客内容" class="headerlink" title="只展示部分博客内容"></a>只展示部分博客内容</h2><p><code>&lt;!--more--&gt;</code></p><p> 以下是余下全文</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h2><ul><li><code>hexo n &quot;我的博客&quot;</code> == <code>hexo new &quot;我的博客&quot;</code>    <strong>新建文章</strong></li><li><code>hexo p</code> == <code>hexo publish</code>   <strong>发布草稿 </strong></li><li><code>hexo g</code> == <code>hexo generate</code>   <strong>生成 </strong></li><li><code>hexo s</code> == <code>hexo server</code>   <strong>启动服务预览</strong></li><li><code>hexo d</code> == <code>hexo deploy</code>   <strong>部署</strong></li></ul><a id="more"></a><h3 id="完成后部署"><a href="#完成后部署" class="headerlink" title="完成后部署"></a>完成后部署</h3><blockquote><p>两个命令的作用是相同的 hexo generate –deploy hexo deploy –generate</p></blockquote><p>简写： <code>hexo d -g</code> #完成后部署 <code>hexo s -g</code> #完成后启动本地服务，可通过默认端口预览访问</p><h2 id="只展示部分博客内容"><a href="#只展示部分博客内容" class="headerlink" title="只展示部分博客内容"></a>只展示部分博客内容</h2><p><code>&lt;!--more--&gt;</code></p><p> 以下是余下全文</p><h2 id="改变插入的图片大小"><a href="#改变插入的图片大小" class="headerlink" title="改变插入的图片大小"></a>改变插入的图片大小</h2><p>可以外面包裹div，单独设置<code>style</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;width: 200px; margin: auto&quot;&gt;![why](why.jpg)&lt;/div&gt;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -685,9 +748,9 @@
       <category term="h5" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/h5/"/>
     
     
-      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
-    
       <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
     
       <category term="h5" scheme="http://gajya.github.io/tags/h5/"/>
     
