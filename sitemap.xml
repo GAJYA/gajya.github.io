@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://gajya.github.io/2019/10/24/vim%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2019-10-23T09:58:54.568Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://gajya.github.io/2019/05/16/SOAP%E8%AF%B7%E6%B1%82%E6%AD%A5%E9%AA%A4/</loc>
     
-    <lastmod>2019-05-19T02:06:49.267Z</lastmod>
+    <lastmod>2019-05-21T02:26:26.150Z</lastmod>
     
   </url>
   
@@ -121,13 +128,6 @@
   </url>
   
   <url>
-    <loc>http://gajya.github.io/2017/09/26/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</loc>
-    
-    <lastmod>2018-10-25T15:10:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://gajya.github.io/2017/10/19/vue-cli%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2018-10-25T15:10:38.000Z</lastmod>
@@ -135,7 +135,7 @@
   </url>
   
   <url>
-    <loc>http://gajya.github.io/categories/index.html</loc>
+    <loc>http://gajya.github.io/tags/index.html</loc>
     
     <lastmod>2018-10-25T15:10:38.000Z</lastmod>
     
@@ -143,6 +143,13 @@
   
   <url>
     <loc>http://gajya.github.io/2018/10/23/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E2%80%94%E2%80%94ajax/</loc>
+    
+    <lastmod>2018-10-25T15:10:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://gajya.github.io/2017/09/26/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</loc>
     
     <lastmod>2018-10-25T15:10:38.000Z</lastmod>
     
@@ -163,14 +170,14 @@
   </url>
   
   <url>
-    <loc>http://gajya.github.io/2018/10/10/ES6%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+    <loc>http://gajya.github.io/categories/index.html</loc>
     
     <lastmod>2018-10-25T15:10:38.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://gajya.github.io/tags/index.html</loc>
+    <loc>http://gajya.github.io/2018/10/10/ES6%E7%AE%80%E5%8D%95%E5%A4%8D%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
     
     <lastmod>2018-10-25T15:10:38.000Z</lastmod>
     
