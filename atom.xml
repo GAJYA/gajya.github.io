@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gajya.github.io/"/>
-  <updated>2019-10-24T07:31:15.055Z</updated>
+  <updated>2019-12-02T07:13:58.667Z</updated>
   <id>http://gajya.github.io/</id>
   
   <author>
@@ -15,6 +15,73 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WebStorm相关</title>
+    <link href="http://gajya.github.io/2019/12/02/WebStorm%E7%95%8C%E9%9D%A2%E5%87%BA%E7%8E%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%EF%BC%88%E5%87%BA%E7%8E%B0%E5%8F%A3%E5%8F%A3%E5%8F%A3%EF%BC%89/"/>
+    <id>http://gajya.github.io/2019/12/02/WebStorm界面出现中文乱码（出现口口口）/</id>
+    <published>2019-12-02T07:07:55.403Z</published>
+    <updated>2019-12-02T07:13:58.667Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="WebStorm界面出现中文乱码（出现口口口）"><a href="#WebStorm界面出现中文乱码（出现口口口）" class="headerlink" title="WebStorm界面出现中文乱码（出现口口口）"></a>WebStorm界面出现中文乱码（出现口口口）</h3><p>新下载的webstorm2.1，搜索文件的时候，搜索框内输入中文，展示为口口口，解决这个问题方法：</p><ol><li>点击settings，快捷键Ctrl+Alt+S</li><li>点击Appearance选项</li><li>勾选【Use custom font】，随便选个其他的字体，看一下，一般就可以了</li><li>点击【ok】</li></ol><h3 id="webstorms使用svn提交代码"><a href="#webstorms使用svn提交代码" class="headerlink" title="webstorms使用svn提交代码"></a>webstorms使用svn提交代码</h3><p>提交代码时候一直显示refreshing VCS，时间很久很久<br>换个版本吧，少年。。。<br>尝试了一些网上的解决方法，都没办法永久解决（webstorm3遇到的这个问题）<br>现已把版本换回2.1，谢谢这个版本拯救了我<br>(￣▽￣)~*</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;WebStorm界面出现中文乱码（出现口口口）&quot;&gt;&lt;a href=&quot;#WebStorm界面出现中文乱码（出现口口口）&quot; class=&quot;headerlink&quot; title=&quot;WebStorm界面出现中文乱码（出现口口口）&quot;&gt;&lt;/a&gt;WebStorm界面出现中文乱码（
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://gajya.github.io/2019/11/12/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8performance%E5%B7%A5%E5%85%B7/"/>
+    <id>http://gajya.github.io/2019/11/12/Chrome浏览器performance工具/</id>
+    <published>2019-11-12T06:27:09.929Z</published>
+    <updated>2019-11-12T06:27:09.931Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Chrome浏览器performance工具"><a href="#Chrome浏览器performance工具" class="headerlink" title="Chrome浏览器performance工具"></a>Chrome浏览器performance工具</h1><p> 摁 <code>Control+shift+I</code> 打开开发者工具就可以找到 <code>performance</code> (旧版本也叫<code>Timeline</code>) </p><h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><ul><li>点击面板左上方圆形按钮开始记录，然后操作页面，一段时间之后在面板上点击停止，即可得到这段操作过程的记录结果。</li><li>点击面板上左上方刷新按键，可以重新加载页面并获得该过程记录结果。</li><li><p>点击面板左上方禁止符号，可以清除记录结果。</p><p><code>Network</code> 和 <code>CPU</code> 两个下拉框选项的作用是模拟移动端运行环境。 </p></li></ul><p>缩略图中一共分为5行，从上到下依次是：</p><ol><li>FPS，表示每一秒的帧数，用来衡量页面动画的性能指标。fps图中绿色柱状越高表示体验越好。若出现红色长条则表示在该时间端出现长帧，可能影响用户体验。</li><li>CPU，表示cpu的使用情况，其中颜色含义和底下的<code>Summary</code>模块中相同。从该行中颜色块的跨越时长可以分析哪类事件消耗的时间较长，从而找到性能瓶颈。</li><li>NET，每一个颜色条表示加载一种文件。蓝色表示html文件、黄色表示js文件、紫色表示样式文件、绿色表示媒体文件、灰色表示其他资源。</li><li>缩略图，对应每一时刻页面的显示情况。通过勾选上方 <code>Screenshots</code> 来控制显示或隐藏。</li><li><p>HEAP，表示堆内存使用情况。可通过勾选上访 <code>Menory</code> 来控制显示或隐藏。</p><h3 id="详情图版块和Summary面板"><a href="#详情图版块和Summary面板" class="headerlink" title="详情图版块和Summary面板"></a>详情图版块和Summary面板</h3><p><a href="https://juejin.im/post/5a5ec3a8518825545d75ccef" target="_blank" rel="noopener">使用chrome performance 查看页面性能</a></p></li></ol><blockquote><p> 蓝色(Loading)：网络通信和HTML解析<br>黄色(Scripting)：JavaScript执行<br>紫色(Rendering)：样式计算和布局，即重排<br>绿色(Painting)：重绘<br>灰色(other)：其它事件花费的时间<br>白色(Idle)：空闲时间 </p></blockquote><ul><li>summary:统计报表</li><li>Bottom-Up:事件时长顺序</li><li>Call Tree:事件调用顺序</li><li>Event log:事件发生的先后顺序</li></ul><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文介绍了如何通过Performance查看CPU、FPS以及对应的耗时操作，知道这些后就可以定向去优化了。</p><ol><li><p>FPS部分，如果红线比较多则代表CPU压力比较大，界面卡顿，如果绿线比较多则代表界面流畅，不卡顿</p></li><li><p>CPU部分，如果黄色区域高且持续出现，代表该处CPU压力较大，如果黄色区域不高，则代表CPU正常运行，页面整体性能很好。</p></li><li><p>Frames部分，代表在执行一次requestAnimationFrame时页面的帧率以及每帧执行时间。</p></li><li><p>Main部分，x轴代表随着时间推移的记录，y轴代表调用栈（执行事件），x轴事件越长执行时间越长，代表该处函数有优化空间，如果执行时间特别长浏览器会强势回流，查看y轴可以看到具体函数定向去优化。点击Main中的事件查看Summary中的可以看到各个阶段（Scripting、Rendering等）执行时间，以及对应事件链接到的源代码位置。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Chrome浏览器performance工具&quot;&gt;&lt;a href=&quot;#Chrome浏览器performance工具&quot; class=&quot;headerlink&quot; title=&quot;Chrome浏览器performance工具&quot;&gt;&lt;/a&gt;Chrome浏览器performance
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://gajya.github.io/2019/11/12/ESLint%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%88error%20No%20ESLint%20configuration%20found%EF%BC%89/"/>
+    <id>http://gajya.github.io/2019/11/12/ESLint报错解决方案（error No ESLint configuration found）/</id>
+    <published>2019-11-12T02:25:37.401Z</published>
+    <updated>2019-11-12T02:25:42.011Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ESLint报错解决方案（error-No-ESLint-configuration-found）"><a href="#ESLint报错解决方案（error-No-ESLint-configuration-found）" class="headerlink" title="ESLint报错解决方案（error: No ESLint configuration found）"></a>ESLint报错解决方案（error: No ESLint configuration found）</h1><p> 在项目部署中出现报错error: No ESLint configuration found，编辑器vscode。</p><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>造成这种报错的原因是项目中缺少 .eslintrc.js文件。添加上就可以了。 </p><h3 id="添加文件方法"><a href="#添加文件方法" class="headerlink" title="添加文件方法"></a>添加文件方法</h3><ol><li>手动添加， 直接手动添加.eslintrc.js文件在项目中，并进行相应的配置就行了。 </li><li>使用命令添加， 如果eslint是全局安装的话，使用命令eslint –init安装。 </li></ol><h3 id="配置信息（简单版）"><a href="#配置信息（简单版）" class="headerlink" title="配置信息（简单版）"></a>配置信息（简单版）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  root: <span class="literal">true</span>,</span><br><span class="line">  env: &#123;</span><br><span class="line">    node: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">'extends'</span>: [</span><br><span class="line">    <span class="string">'plugin:vue/essential'</span>,</span><br><span class="line">    <span class="string">'@vue/standard'</span></span><br><span class="line">  ],</span><br><span class="line">  rules: &#123;</span><br><span class="line">      <span class="comment">// 生产环境不能使用console</span></span><br><span class="line">    <span class="string">'no-console'</span>: process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'error'</span> : <span class="string">'off'</span>,</span><br><span class="line">      <span class="comment">// 生产环境不能使用debugger</span></span><br><span class="line">    <span class="string">'no-debugger'</span>: process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'error'</span> : <span class="string">'off'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  parserOptions: &#123;</span><br><span class="line">    parser: <span class="string">'babel-eslint'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h5><ul><li><code>&quot;no-undef&quot;: 0,</code>和<code>&quot;no-undef&quot;: &#39;off&#39;,</code>一样，表示关闭该功能</li><li><code>&quot;no-undef&quot;: 1,</code> 表示仅提示</li><li><code>&quot;no-undef&quot;: 2,</code> 表示报错</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;ESLint报错解决方案（error-No-ESLint-configuration-found）&quot;&gt;&lt;a href=&quot;#ESLint报错解决方案（error-No-ESLint-configuration-found）&quot; class=&quot;headerlink&quot; t
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>vim基本使用</title>
