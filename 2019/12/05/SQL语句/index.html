@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="GAJYA的个人博客">
 <meta property="og:description" content="SQL语句一、运行MySQL命令提示符下输入mysql -u root -p，然后输入口令，如果一切正确，会连接到MySQL服务器，同时提示符变为mysql。 输入exit退出MySQL命令行。注意，MySQL服务器仍在后台运行。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-05T09:15:27.068Z">
+<meta property="og:updated_time" content="2019-12-06T01:39:09.144Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL语句">
 <meta name="twitter:description" content="SQL语句一、运行MySQL命令提示符下输入mysql -u root -p，然后输入口令，如果一切正确，会连接到MySQL服务器，同时提示符变为mysql。 输入exit退出MySQL命令行。注意，MySQL服务器仍在后台运行。">
@@ -347,9 +347,9 @@
 <h3 id="二、关系模型"><a href="#二、关系模型" class="headerlink" title="二、关系模型"></a>二、关系模型</h3><p><code>主键</code>是关系表中记录的唯一标识。主键的选取非常重要：主键不要带有业务含义，而应该使用BIGINT自增或者GUID类型。主键也不应该允许<code>NULL</code>。</p>
 <p>可以使用多个列作为联合主键，但联合主键并不常用。</p>
 <p>关系数据库通过<code>外键</code>可以实现一对多、多对多和一对一的关系。外键既可以通过数据库来约束，也可以不设置约束，仅依靠应用程序的逻辑来保证。</p>
-<p>添加外键</p>
+<p><strong>添加外键</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students</span><br><span class="line">ADD CONSTRAINT fk_class_id   </span><br><span class="line">FOREIGN KEY (class_id)</span><br><span class="line">REFERENCES classes (id);</span><br><span class="line">// 外键约束的名称为fk_class_id(名称可以任意)；指定class_id作为外键，classes (id)指定了这个外键将关联到classes表的id列（即classes表的主键）</span><br></pre></td></tr></table></figure>
-<p>删除外键约束</p>
+<p><strong>删除外键约束</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students</span><br><span class="line">DROP FOREIGN KEY fk_class_id;</span><br></pre></td></tr></table></figure>
 <p>注意：删除外键约束并没有删除外键这一列。删除列是通过<code>DROP COLUMN ...</code>实现的。</p>
 <h3 id="三、查询数据"><a href="#三、查询数据" class="headerlink" title="三、查询数据"></a>三、查询数据</h3><h4 id="基本查询"><a href="#基本查询" class="headerlink" title="基本查询"></a>基本查询</h4><p>要查询数据库表的数据，我们使用如下的SQL语句：</p>
@@ -457,6 +457,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2020/01/16/Sass文档/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -530,7 +534,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -630,7 +634,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
