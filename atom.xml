@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gajya.github.io/"/>
-  <updated>2020-01-16T03:13:59.701Z</updated>
+  <updated>2020-01-17T08:19:48.299Z</updated>
   <id>http://gajya.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TypeScript它不香吗</title>
+    <link href="http://gajya.github.io/2020/01/17/TypeScript%E5%AE%83%E4%B8%8D%E9%A6%99%E5%90%97/"/>
+    <id>http://gajya.github.io/2020/01/17/TypeScript它不香吗/</id>
+    <published>2020-01-17T07:46:17.000Z</published>
+    <updated>2020-01-17T08:19:48.299Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="TypeScript-它不香吗"><a href="#TypeScript-它不香吗" class="headerlink" title="TypeScript 它不香吗"></a>TypeScript 它不香吗</h2><p>ts是js的超集，意味着js本身的语法在ts里面也能跑的通。<br>ts一方面是对js加上了很多条条框框的限制，另一方面是拓展了js的一些能力，就像es6提供了那么多神奇的语法糖一样。<br>只要按照一定的规则去书写js，就能享受到ts带来的好处。</p><p><div style="border:none;"><img src="/2020/01/17/TypeScript它不香吗/images.jpg" alt="真香警告"></div><br><a id="more"></a></p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol><li><p>使用命令全局安装typeScript</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g typescript</span><br></pre></td></tr></table></figure></li><li><p>到指定项目下，使用命令初始化，创建tsconfig.json文件</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tsc -init</span><br></pre></td></tr></table></figure></li><li><p>可以在<code>tsconfig.json</code>文件中修改或删除相应配置</p><p>常用配置：</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">   "target": "es5", // 编译为何种规范，一般设置为 ES5 或者 ES2016/2017</span><br><span class="line">   "noImplicitAny": false, // 在表达式和声明上有隐含的 any类型时报错。</span><br><span class="line">   "module": "amd", //指定生成哪个模块系统代码： "None"， "CommonJS"， "AMD"， "System"， "UMD"， "ES6"或 "ES2015"。只有 "AMD"和 "System"能和 --outFile一起使用。"ES6"和 "ES2015"可使用在目标输出为 "ES5"或更低的情况下。</span><br><span class="line">   "removeComments": false,// 删除所有注释，除了以 /!*开头的版权信息。</span><br><span class="line">   "sourceMap": false, // 生成相应的 .map文件。</span><br><span class="line">   "outDir": "build",// 你要生成js的目录,可自由命名</span><br><span class="line">   "alwaysStrict": true, // 打开严格模式 (‘use strict’)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><ol start="4"><li><p><code>vscode</code>当编写好一个ts文件的时候，按下 <code>Ctrl+shift+B</code>快捷键会进行编译，初次编译会选择编译模式（自行编写.ts文件测试），选择<code>监视模式</code>，这样就会自动生成一个对应的js文件。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tsc hello.ts -watch</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">tsc hello.ts -w</span><br></pre></td></tr></table></figure></li></ol><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>在TypeScript中，<code>boolean</code>是JavaScript中的<code>基本类型</code>，而<code>Boolean</code>是JavaScript中的<code>构造函数</code>。<code>new Boolean(1 )</code>返回的是一个Boolean对象，直接调用<code>Boolean(1)</code>返回的是一个boolean类型。除了<code>null</code>和<code>undefined</code>外，同上。</p><h3 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h3><p>JavaScript中没有空值的概念（void），在typescript中，用void表示没有任何返回值的函数。</p><p><code>undefined</code> 和 <code>null</code> 是所有类型的子类型。也就是说 <code>undefined</code> 类型的变量，可以赋值给 <code>number</code> 类型的变量，而 <code>void</code> 类型的变量不能赋值给 <code>number</code> 类型的变量。</p><h3 id="类型推论"><a href="#类型推论" class="headerlink" title="类型推论"></a>类型推论</h3><p>TypeScript会在没有明确的指定类型的时候推测一个类型，这就是类型推论。</p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">12</span></span><br><span class="line">num = <span class="string">'aaa'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// hello.ts:24:1 - error TS2322: Type '"aaa"' is not assignable to type 'number'.</span></span><br><span class="line"><span class="comment">// 不能将类型“"aaa"”分配给类型“number”。</span></span><br></pre></td></tr></table></figure><p><strong>如果定义的时候没有赋值，不管之后有没有赋值，都会被推断成</strong> <code>any</code> <strong>类型而完全不被类型检查</strong></p><h3 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h3><p>当 TypeScript 不确定一个联合类型的变量到底是哪个类型的时候，我们<strong>只能访问此联合类型的所有类型里共有的属性或方法</strong>：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLength</span>(<span class="params">param: string | number</span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> param.length</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// hello.ts:29:18 - error </span></span><br><span class="line"><span class="comment">// TS2339: Property 'length' does not exist on type 'string | number'.</span></span><br><span class="line"><span class="comment">// Property 'length' does not exist on type 'number'.</span></span><br><span class="line"><span class="comment">// 类型“string | number”上不存在属性“length”。</span></span><br><span class="line"><span class="comment">// 类型“number”上不存在属性“length”。ts(2339)</span></span><br></pre></td></tr></table></figure><p>上例中，<code>length</code> 不是 <code>string</code> 和 <code>number</code> 的共有属性，所以会报错。</p><p>访问 <code>string</code> 和 <code>number</code> 的共有属性是没问题的。比如<code>toString()</code>方法。</p><p>联合类型的变量在被赋值的时候，会根据类型推论的规则推断出一个类型，如果推断出的类型没有某个属性或者方法时候，就会报错</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num : string | number</span><br><span class="line">num = <span class="string">'two'</span></span><br><span class="line"><span class="built_in">console</span>.log(num.length)</span><br><span class="line">num = <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(num.length) <span class="comment">// 报错</span></span><br><span class="line"><span class="comment">//hello.ts:27:18 - error TS2339: Property 'length' does not exist on type 'number'.</span></span><br><span class="line"><span class="comment">// 类型“number”上不存在属性“length”。ts(2339)</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;TypeScript-它不香吗&quot;&gt;&lt;a href=&quot;#TypeScript-它不香吗&quot; class=&quot;headerlink&quot; title=&quot;TypeScript 它不香吗&quot;&gt;&lt;/a&gt;TypeScript 它不香吗&lt;/h2&gt;&lt;p&gt;ts是js的超集，意味着js本身的语法在ts里面也能跑的通。&lt;br&gt;ts一方面是对js加上了很多条条框框的限制，另一方面是拓展了js的一些能力，就像es6提供了那么多神奇的语法糖一样。&lt;br&gt;只要按照一定的规则去书写js，就能享受到ts带来的好处。&lt;/p&gt;
+&lt;p&gt;&lt;div style=&quot;border:none;&quot;&gt;&lt;img src=&quot;/2020/01/17/TypeScript它不香吗/images.jpg&quot; alt=&quot;真香警告&quot;&gt;&lt;/div&gt;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Sass文档</title>
@@ -200,9 +219,9 @@
       <category term="其它" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/%E5%85%B6%E5%AE%83/"/>
     
     
-      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="其它" scheme="http://gajya.github.io/tags/%E5%85%B6%E5%AE%83/"/>
     
@@ -344,7 +363,7 @@
     <link href="http://gajya.github.io/2019/03/05/test-post/"/>
     <id>http://gajya.github.io/2019/03/05/test-post/</id>
     <published>2019-03-04T16:13:14.000Z</published>
-    <updated>2019-03-04T17:29:20.859Z</updated>
+    <updated>2020-01-17T07:55:33.532Z</updated>
     
     <content type="html"><![CDATA[<h2 id="test-post"><a href="#test-post" class="headerlink" title="test-post"></a>test-post</h2><p>测试hexo插入图片</p><a id="more"></a><p><img src="/2019/03/05/test-post/vue.png" alt="vue"></p>]]></content>
     
@@ -380,9 +399,9 @@
       <category term="es6" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/es6/"/>
     
     
-      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="es6" scheme="http://gajya.github.io/tags/es6/"/>
     
@@ -440,9 +459,9 @@
       <category term="es6" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/es6/"/>
     
     
-      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="es6" scheme="http://gajya.github.io/tags/es6/"/>
     
@@ -470,9 +489,9 @@
       <category term="es6" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/es6/"/>
     
     
-      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="es6" scheme="http://gajya.github.io/tags/es6/"/>
     
@@ -501,9 +520,9 @@
       <category term="es6" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/es6/"/>
     
     
-      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="es6" scheme="http://gajya.github.io/tags/es6/"/>
     
@@ -530,9 +549,9 @@
       <category term="javascript" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/"/>
     
     
-      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -708,9 +727,9 @@
       <category term="es6" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/es6/"/>
     
     
-      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="es6" scheme="http://gajya.github.io/tags/es6/"/>
     
@@ -877,9 +896,9 @@
       <category term="h5" scheme="http://gajya.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/h5/"/>
     
     
-      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://gajya.github.io/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://gajya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="h5" scheme="http://gajya.github.io/tags/h5/"/>
     
